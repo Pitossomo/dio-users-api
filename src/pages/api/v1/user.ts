@@ -13,26 +13,29 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { name } = req.query;
+  console.log(name);
 
   (async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      headless: true,
+    });
     const page = await browser.newPage();
 
-    await page.goto(`https://web.dio.me/user/${name}?tab=skills`, {
-      timeout: 120000,
+    await page.goto(`https://www.dio.me/sign-in`, {
+      waitUntil: "networkidle0",
     });
 
-    const skills = await page.evaluate(() => {
-      return document.body.innerHTML;
+    await page.type("#username", process.env.DIO_USERNAME as string);
+    await page.type("#password", process.env.DIO_PASSWORD as string);
+    await page.click("#kc-login");
+
+    await page.waitForNavigation();
+
+    await page.goto(`https://web.dio.me/users/${name}?tab=skills`, {
+      waitUntil: "networkidle0",
     });
 
-    browser.close();
-
-    res.status(200).send(skills);
-  })();
-}
-
-/*
+    // TODO - parse skills in page
     const skills: Skill[] = await page.evaluate(() => {
       let parsedSkill: Skill[] = [];
       document.querySelectorAll(".sc-bsVkav").forEach((el) => {
@@ -48,4 +51,8 @@ export default async function handler(
       return parsedSkill;
     });
 
-    */
+    browser.close();
+
+    res.status(200).send(skills);
+  })();
+}
