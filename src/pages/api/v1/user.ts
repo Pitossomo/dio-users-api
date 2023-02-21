@@ -35,17 +35,15 @@ export default async function handler(
       waitUntil: "networkidle0",
     });
 
-    // TODO - parse skills in page
     const skills: Skill[] = await page.evaluate(() => {
       let parsedSkill: Skill[] = [];
-      document.querySelectorAll(".sc-bsVkav").forEach((el) => {
+      document.querySelectorAll(".ifSrgQ").forEach((el) => {
         parsedSkill.push({
-          name: el.querySelectorAll(".sc-eHAsqE")[0]?.textContent ?? "MissngNo",
-          exp:
-            el.querySelectorAll(".sc-eHAsqE")[1]?.textContent ?? " ????/????",
+          name: el.querySelectorAll(".fHfqGg")[0]?.innerHTML ?? "MissngNo",
+          exp: el.querySelectorAll(".fHfqGg")[1]?.innerHTML ?? " ????/????",
           imgUrl:
-            el.querySelector("sc-gnyVkE")?.getAttribute("src") ??
-            "public\vercel.svg",
+            el.querySelector(".evmWdO")?.getAttribute("src") ??
+            "public/vercel.svg",
         });
       });
       return parsedSkill;
