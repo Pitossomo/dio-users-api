@@ -1,2 +1,2 @@
 ###
-GET http://localhost:3000/api/v1/user?name=pedro_h_teles
+GET http://localhost:3000/api/v1/user?name=walacesouza18

@@ -1,12 +1,7 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import SkillsSVG from "@/components/SkillsSVG";
+import { Skill } from "@/types/Skill";
 import type { NextApiRequest, NextApiResponse } from "next";
 import puppeteer from "puppeteer";
-
-type Skill = {
-  imgUrl: string;
-  name: string;
-  exp: string;
-};
 
 export default async function handler(
   req: NextApiRequest,
@@ -51,6 +46,9 @@ export default async function handler(
 
     browser.close();
 
-    res.status(200).send(skills);
+    res
+      .status(200)
+      .setHeader("Content-type", "image/svg+xml")
+      .send(SkillsSVG({ skills }));
   })();
 }
