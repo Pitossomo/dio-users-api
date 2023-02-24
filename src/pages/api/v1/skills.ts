@@ -7,8 +7,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { name } = req.query;
-  console.log(name);
+  const { username } = req.query;
 
   (async () => {
     const browser = await puppeteer.launch({
@@ -26,7 +25,7 @@ export default async function handler(
 
     await page.waitForNavigation();
 
-    await page.goto(`https://web.dio.me/users/${name}?tab=skills`, {
+    await page.goto(`https://web.dio.me/users/${username}?tab=skills`, {
       waitUntil: "networkidle0",
     });
 

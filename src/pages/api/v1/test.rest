@@ -1,2 +1,2 @@
 ###
-GET http://localhost:3000/api/v1/user?name=walacesouza18
+GET http://localhost:3000/api/v1/skills?username=walacesouza18
