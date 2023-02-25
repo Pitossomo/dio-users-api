@@ -2,12 +2,23 @@ import SkillsSVG from "@/components/SkillsSVG";
 import { Skill } from "@/types/Skill";
 import type { NextApiRequest, NextApiResponse } from "next";
 import puppeteer from "puppeteer";
+import cache from "memory-cache";
+
+const CACHE_PERIOD = 7 * 24 * 60 * 60 * 1000;
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
-) {
+): Promise<void> {
   const { username } = req.query;
+  const cachedResponse = cache.get(username);
+  if (cachedResponse) {
+    res
+      .status(200)
+      .setHeader("Content-type", "image/svg+xml")
+      .send(cachedResponse);
+      return;
+  }    
 
   (async () => {
     const browser = await puppeteer.launch({
@@ -44,10 +55,12 @@ export default async function handler(
     });
 
     browser.close();
+    const skillsImage = SkillsSVG({ skills });
+    cache.put(username, skillsImage, CACHE_PERIOD);
 
     res
       .status(200)
       .setHeader("Content-type", "image/svg+xml")
-      .send(SkillsSVG({ skills }));
+      .send(skillsImage);
   })();
 }
