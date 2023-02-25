@@ -1,38 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DIO User API 🐱‍🐉
 
-## Getting Started
+Este projeto é uma API para gerar imagens das principais skills estudadas na plataforma [DIO](https://web.dio.me).
 
-First, run the development server:
+Podemos gerar a seguinte imagem indicando apenas o nome do usuário:  
+<img src="http://dio-users-api.vercel.app/api/v1/skills?username=pedro_h_teles" width="300px" height="300px" />
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<br />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A ideia foi inspirada no famoso [Github Stats Card](https://github.com/anuraghazra/github-readme-stats), usado para gerar imagens dinâmicas das linguagens mais usadas por cada desenvolvedor a partir da análise de seus repositórios no Github.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Exemplo de uso 🖍
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Para se usar, deve-se copiar a seguinte linha de código, alterando o nome do usuário no local indicado.  
+`<img src="http://dio-users-api.vercel.app/api/v1/skills?username=[NOME-DO-USUARIO]" width="300px" height="300px" />`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+As dimensões da imagem também podem ser alteradas através dos atributos width e height. O resultado pode ser visto abaixo:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<img src="http://dio-users-api.vercel.app/api/v1/skills?username=pedro_h_teles" width="300px" height="300px" />
 
-## Learn More
+## Observação importante ❗
 
-To learn more about Next.js, take a look at the following resources:
+A página dos usuários é acessível apenas aos usuários cadastradas na plataforma, e demanda autenticação.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Para possibilitar a coleta das informações, foi utilizada a biblioteca [Puppeteer](https://pptr.dev/), o que demanda um alto tempo de processamento, já que não existe API para acessar diretamente os dados do usuário.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Sendo assim, a fim de minimizar o custo operacional e o impacto na plataforma, as imagens são salvas em cache no servidor durante 7 dias. A primeira requisição demora alguns segundos para ser gerada pelo servidor, e as requisições posteriores são resolvidas instantaneamente.
