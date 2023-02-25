@@ -4,12 +4,12 @@ type SkillSVGProps = {
   skills: Skill[];
 };
 
-export default function SkillsSVG({ skills }: SkillSVGProps) {
+export default function SkillsSVG({ skills }: SkillSVGProps): string {
   return `
     <svg xmlns="http://www.w3.org/2000/svg"
       viewbox="0 0 300 300"
       width="300" height="300"
-      style="background-color:black"
+      style="background-color:darkgray"
     >
       <style>
         text { 
