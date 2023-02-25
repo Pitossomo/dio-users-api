@@ -9,26 +9,26 @@ export default function SkillsSVG({ skills }: SkillSVGProps): string {
     <svg xmlns="http://www.w3.org/2000/svg"
       viewbox="0 0 300 300"
       width="300" height="300"
-      style="background-color:darkgray"
+      style="background-color:#333"
     >
       <style>
         text { 
-          font: normal 8px monospace;
+          font-family: monospace;
           fill: white;
         }
       </style>
       ${
         skills.length > 0
-          ? `<text x="0" y="15">Skills</text>` +
+          ? `<text x="8" y="16" font-size="1.5em">Skills</text>` +
             skills
               .map(
                 (skill, i) => `
               <g>
-                <image x="150" y="${i * 30 + 15}" href="${
+                <image x="8" y="${i * 32 + 20}" href="${
                   skill.imgUrl
-                }" height="30" width="30" />
-                <text x="0" y="${(i + 1) * 30}">${skill.name}</text>
-                <text x="70" y="${(i + 1) * 30}">${skill.exp}</text>
+                }" height="28" width="28" />
+                <text x="48" y="${(i + 1) * 32}">${skill.name}</text>
+                <text x="48" y="${(i + 1) * 32 + 16}">${skill.exp}</text>
               </g>
             `
               )
