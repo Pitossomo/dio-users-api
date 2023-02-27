@@ -31,6 +31,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Google Cloud Platform
+.gcloudignore
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
