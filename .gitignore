@@ -33,6 +33,7 @@ yarn-error.log*
 
 # Google Cloud Platform
 .gcloudignore
+.cache
 
 # typescript
 *.tsbuildinfo
