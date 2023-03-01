@@ -18,7 +18,7 @@ export default function ExperienceBar({ xLength, index }: AnimatedBarProps) {
     <line
       x1="8" x2="${xLength}" 
       y1="${y}" y2="${y}"
-      stroke-width="6px" stroke="${COLORS[index]}"
+      stroke-width="8px" stroke="${COLORS[index]}"
       stroke-linecap="round"
     >
       <animate
