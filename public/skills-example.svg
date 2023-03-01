@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 300 300" width="300" height="300" style="background-color:#333">
+      <style>
+        text { 
+          font-family: monospace;
+          fill: white;
+        }
+      </style>
+      <text x="8" y="16" font-size="1.5em">Skills</text>
+              <g>
+                <text x="8" text-anchor="start" y="32">Soft Skill</text>
+                <text x="284" text-anchor="end" y="32">4080</text>
+                
+    <line x1="8" x2="284" y1="44" y2="44" stroke-width="8px" stroke="forestgreen" stroke-linecap="round">
+      <animate attributeName="x2" values="0;284" dur="1s"/>
+    </line>
+  
+              </g>
+            ,
+              <g>
+                <text x="8" text-anchor="start" y="64">React</text>
+                <text x="284" text-anchor="end" y="64">1232</text>
+                
+    <line x1="8" x2="85.75686274509805" y1="76" y2="76" stroke-width="8px" stroke="tomato" stroke-linecap="round">
+      <animate attributeName="x2" values="0;85.75686274509805" dur="1s"/>
+    </line>
+  
+              </g>
+            ,
+              <g>
+                <text x="8" text-anchor="start" y="96">Java</text>
+                <text x="284" text-anchor="end" y="96">720</text>
+                
+    <line x1="8" x2="50.11764705882353" y1="108" y2="108" stroke-width="8px" stroke="goldenrod" stroke-linecap="round">
+      <animate attributeName="x2" values="0;50.11764705882353" dur="1s"/>
+    </line>
+  
+              </g>
+            ,
+              <g>
+                <text x="8" text-anchor="start" y="128">.NET C#</text>
+                <text x="284" text-anchor="end" y="128">720</text>
+                
+    <line x1="8" x2="50.11764705882353" y1="140" y2="140" stroke-width="8px" stroke="dodgerblue" stroke-linecap="round">
+      <animate attributeName="x2" values="0;50.11764705882353" dur="1s"/>
+    </line>
+  
+              </g>
+            ,
+              <g>
+                <text x="8" text-anchor="start" y="160">GitHub</text>
+                <text x="284" text-anchor="end" y="160">492</text>
+                
+    <line x1="8" x2="34.247058823529414" y1="172" y2="172" stroke-width="8px" stroke="deeppink" stroke-linecap="round">
+      <animate attributeName="x2" values="0;34.247058823529414" dur="1s"/>
+    </line>
+  
+              </g>
+            ,
+              <g>
+                <text x="8" text-anchor="start" y="192">HTML</text>
+                <text x="284" text-anchor="end" y="192">481</text>
+                
+    <line x1="8" x2="33.48137254901961" y1="204" y2="204" stroke-width="8px" stroke="teal" stroke-linecap="round">
+      <animate attributeName="x2" values="0;33.48137254901961" dur="1s"/>
+    </line>
+  
+              </g>
+            
+    </svg>
