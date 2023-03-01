@@ -1,10 +1,13 @@
 import { Skill } from "@/types/Skill";
+import ExperienceBar from "./ExperienceBar";
 
 type SkillSVGProps = {
   skills: Skill[];
 };
 
 export default function SkillsSVG({ skills }: SkillSVGProps): string {
+  const maxExp = skills.reduce((max, skill) => Math.max(max, skill.exp), 0);
+  const maxLengthFactor = 284 / maxExp;
   return `
     <svg xmlns="http://www.w3.org/2000/svg"
       viewbox="0 0 300 300"
@@ -24,11 +27,16 @@ export default function SkillsSVG({ skills }: SkillSVGProps): string {
               .map(
                 (skill, i) => `
               <g>
-                <image x="8" y="${i * 32 + 20}" href="${
-                  skill.imgUrl
-                }" height="28" width="28" />
-                <text x="48" y="${(i + 1) * 32}">${skill.name}</text>
-                <text x="48" y="${(i + 1) * 32 + 16}">${skill.exp}</text>
+                <text x="8" text-anchor="start" y="${(i + 1) * 32}">${
+                  skill.name
+                }</text>
+                <text x="284" text-anchor="end" y="${(i + 1) * 32}">${
+                  skill.exp
+                }</text>
+                ${ExperienceBar({
+                  xLength: skill.exp * maxLengthFactor,
+                  index: i,
+                })}
               </g>
             `
               )
