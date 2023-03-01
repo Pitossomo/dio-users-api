@@ -1,5 +1,0 @@
-###
-GET https://dio-users-api.vercel.app/api/v1/skills?username=pedro_h_teles
-
-###
-GET http://localhost:3000/api/v1/skills?username=pedro_h_teles
