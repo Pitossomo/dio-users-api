@@ -3,20 +3,40 @@
 Este projeto é uma API para gerar imagens das principais skills estudadas na plataforma [DIO](https://web.dio.me).
 
 Podemos gerar a seguinte imagem indicando apenas o nome do usuário:  
-<img src="http://dio-users-api.vercel.app/api/v1/skills?username=pedro_h_teles" width="300px" height="300px" />
+![Imagem com exemplo de Skills](/public/skills-example.svg)
 
 <br />
 
 A ideia foi inspirada no famoso [Github Stats Card](https://github.com/anuraghazra/github-readme-stats), usado para gerar imagens dinâmicas das linguagens mais usadas por cada desenvolvedor a partir da análise de seus repositórios no Github.
 
-## Exemplo de uso 🖍
+## Exemplo de uso em ambiente local 🏡
 
-Para se usar, deve-se copiar a seguinte linha de código, alterando o nome do usuário no local indicado.  
-`<img src="http://dio-users-api.vercel.app/api/v1/skills?username=[NOME-DO-USUARIO]" width="300px" height="300px" />`
+Para rodar o ambiente localmente, clone o repositório com o comando:
+`git clone https://github.com/Pitossomo/dio-users-api.git`
 
-As dimensões da imagem também podem ser alteradas através dos atributos width e height. O resultado pode ser visto abaixo:
+Na raiz do projeto, crie o arquivo `.env.local` com as variáveis:
 
-<img src="http://dio-users-api.vercel.app/api/v1/skills?username=pedro_h_teles" width="300px" height="300px" />
+```
+DIO_USERNAME=[Email cadastrado na DIO - p.ex. usuario@gmail.com]
+DIO_PASSWORD=[Senha na DIO - p.ex. senha123]
+```
+
+Rode o servidor em modo de desenvolvimento com o comando:
+`npm run dev`
+
+No navegador, abra a página `http://localhost:3000/api/v1/skills?username=pedro_h_teles`, com o nome de usuário adequado.
+
+Para encontrar o seu nome de usuário, visite seu perfil e veja o nome na barra de endereço. Por exemplo, na imagem abaixo o nome do usuário é `pedro_h_teles`:
+![Captura de tela do perfil](/public/skills-example2.png)
+
+Na primeira visita, aguarde o tempo para o carregamento. Nas visitas futuras, o carregamento será instantâneo, desde que o servidor não seja reinicializado e o nome do usuário seja o mesmo.
+
+### Exemplo de uso da versão em nuvem ⚠ (Instável)
+
+Para se usar a aplicação na nuvem, deve-se copiar a seguinte linha de código, alterando o nome do usuário conforme necessário.  
+`<img src="https://dio-users.appspot.com/api/v1/skills?username=pedro_h_teles" width="300px" height="300px" />`
+
+![Imagem com exemplo de Skills](/public/skills-example.svg)
 
 ## Observação importante ❗
 
