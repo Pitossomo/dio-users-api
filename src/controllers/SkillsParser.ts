@@ -27,7 +27,10 @@ export default async function parseSkills(username: string) {
     document.querySelectorAll(".ifSrgQ").forEach((el) => {
       parsedSkill.push({
         name: el.querySelectorAll(".fHfqGg")[0]?.innerHTML ?? "MissngNo",
-        exp: el.querySelectorAll(".fHfqGg")[1]?.innerHTML ?? " ????/????",
+        exp:
+          Number(
+            el.querySelectorAll(".fHfqGg")[1]?.innerHTML.split("/")[0].slice(2)
+          ) ?? 0,
         imgUrl:
           el.querySelector(".evmWdO")?.getAttribute("src") ??
           "public/vercel.svg",
