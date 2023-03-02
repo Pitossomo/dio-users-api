@@ -13,7 +13,7 @@ const COLORS = [
 ];
 
 export default function ExperienceBar({ xLength, index }: AnimatedBarProps) {
-  const y = (index + 1) * 32 + 12;
+  const y = (index + 1) * 32 + 28;
   return `
     <line
       x1="8" x2="${xLength}" 
