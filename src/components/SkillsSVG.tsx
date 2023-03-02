@@ -10,8 +10,8 @@ export default function SkillsSVG({ skills }: SkillSVGProps): string {
   const maxLengthFactor = 284 / maxExp;
   return `
     <svg xmlns="http://www.w3.org/2000/svg"
-      viewbox="0 0 300 300"
-      width="300" height="300"
+      viewbox="0 0 300 250"
+      width="300" height="250"
       style="background-color:#333"
     >
       <style>
@@ -22,15 +22,15 @@ export default function SkillsSVG({ skills }: SkillSVGProps): string {
       </style>
       ${
         skills.length > 0
-          ? `<text x="8" y="16" font-size="1.5em">Skills</text>` +
+          ? `<text x="8" y="32" font-size="1.5em">Skills</text>` +
             skills
               .map(
                 (skill, i) => `
               <g>
-                <text x="8" text-anchor="start" y="${(i + 1) * 32}">${
+                <text x="8" text-anchor="start" y="${(i + 1) * 32 + 16}">${
                   skill.name
                 }</text>
-                <text x="284" text-anchor="end" y="${(i + 1) * 32}">${
+                <text x="284" text-anchor="end" y="${(i + 1) * 32 + 16}">${
                   skill.exp
                 }</text>
                 ${ExperienceBar({
