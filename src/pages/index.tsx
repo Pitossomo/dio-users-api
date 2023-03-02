@@ -10,12 +10,8 @@ export default function Home() {
       </Head>
       <main className="main">
         <h1>DIO Users API 🐲</h1>
-        <a
-          href={
-            "https://dio-users.appspot.com/api/v1/skills?username=pedro_h_teles"
-          }
-        >
-          Visite a página{" "}
+        <a href="http://localhost:3000/api/v1/skills?username=pedro_h_teles">
+          Visite a página da imagem
         </a>
         <Image
           src="/skills-example.svg"
