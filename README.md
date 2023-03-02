@@ -21,7 +21,7 @@ A ideia foi inspirada no famoso [Github Stats Card](https://github.com/anuraghaz
 3. Na raiz do projeto, crie o arquivo `.env.local` com as variáveis:
 
 ```
-DIO_USERNAME=email.cadastrado.na.dio@exemplo.com]
+DIO_USERNAME=email.cadastrado.na.dio@exemplo.com
 DIO_PASSWORD=senhaNaDIO
 ```
 
@@ -37,7 +37,7 @@ DIO_PASSWORD=senhaNaDIO
 
 ---
 
-### Propostar futuras
+### Propostas futuras
 
 Hospedar o projeto em um servidor para criar as imagens dinâmicamente. Por se tratar de um projeto com alta latência, o custo de hospedagem ficou bem alto, sendo
 
