@@ -34,7 +34,7 @@ Na primeira visita, aguarde o tempo para o carregamento. Nas visitas futuras, o 
 ### Exemplo de uso da versão em nuvem ⚠ (Instável)
 
 Para se usar a aplicação na nuvem, deve-se copiar a seguinte linha de código, alterando o nome do usuário conforme necessário.  
-`<img src="https://dio-users.appspot.com/api/v1/skills?username=pedro_h_teles" width="300px" height="300px" />`
+`<img src="https://dio-users.appspot.com/api/v1/skills?username=pedro_h_teles" width="300px" height="250px" />`
 
 ![Imagem com exemplo de Skills](/public/skills-example.svg)
 
